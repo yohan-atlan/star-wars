@@ -1,16 +1,144 @@
+html,
 body {
-	background: #000;
-	font-family: 'Montserrat', sans-serif;
-	font-size: 14px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  background-color: #111117;
+}
+.galaxy {
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 5000px;
+          perspective: 5000px;
+}
+input {
+  display: none;
+}
+.planet__mars {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  background-color: #000;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transition: -webkit-transform 4s;
+  transition: -webkit-transform 4s;
+  transition: transform 4s;
+  transition: transform 4s, -webkit-transform 4s;
+  -webkit-animation: pulse 3s linear infinite alternate;
+          animation: pulse 3s linear infinite alternate;
+}
+.planet__mars::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 50%;
+/* background-color: rgba(255,255,255,1); */
+  background-image: url("http://mepag.jpl.nasa.gov/hightlight_images/mars2_115916c.jpg");
+  background-size: auto 100%;
+  background-position: center;
+}
+input:checked + .planet__mars {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+.cloud {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: scale(0.3) translate(-50%, -50%);
+          transform: scale(0.3) translate(-50%, -50%);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 4s;
+  transition: -webkit-transform 4s;
+  transition: transform 4s;
+  transition: transform 4s, -webkit-transform 4s;
+}
+input:checked ~ .cloud {
+  -webkit-transform: scale(0.5) translate(-50%, -50%);
+          transform: scale(0.5) translate(-50%, -50%);
+}
+.cluster {
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 5000px;
+          perspective: 5000px;
+  -webkit-animation: rotation 240s linear infinite;
+          animation: rotation 240s linear infinite;
+}
+.star {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+.star,
+.star::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,0.8);
+}
+.star::before {
+  content: "";
+  -webkit-transform: rotateY(-90deg);
+          transform: rotateY(-90deg);
 }
 
-.explore {
-	width: 150px;
-	height: 60px;
-	background-color: #FFE81F;
-	color: #000;
-	font-size: 17px;
-	text-transform: uppercase;
-	border: none;
-	font-weight: 700;
+@-webkit-keyframes pulse {
+  from {
+    box-shadow: 0 0 20px #ff6432;
+  }
+  to {
+    box-shadow: 0 0 50px #ff6432;
+  }
+}
+@keyframes pulse {
+  from {
+    box-shadow: 0 0 20px #ff6432;
+  }
+  to {
+    box-shadow: 0 0 50px #ff6432;
+  }
+}
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotateY(0) rotateX(0);
+            transform: rotateY(0) rotateX(0);
+  }
+  to {
+    -webkit-transform: rotateY(-360deg) rotateX(360deg);
+            transform: rotateY(-360deg) rotateX(360deg);
+  }
+}
+@keyframes rotation {
+  from {
+    -webkit-transform: rotateY(0) rotateX(0);
+            transform: rotateY(0) rotateX(0);
+  }
+  to {
+    -webkit-transform: rotateY(-360deg) rotateX(360deg);
+            transform: rotateY(-360deg) rotateX(360deg);
+  }
 }
