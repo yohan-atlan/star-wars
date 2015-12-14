@@ -47,10 +47,6 @@ body {
   animation-timing-function: linear;
 
 }
-.x-wing:hover {
-  animation-play-state:paused;
-}
-
 @keyframes xwing {
   from {left:-45%}
   to {left:100%;}
