@@ -3,11 +3,82 @@ body {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
 }
 body {
-  background-color: #111117;
+  background: url(../images/background2.png);
+  background-size: cover;
+
 }
-.galaxy {
+
+.logo {
+  background-image: url(../images/logo.png);
+  background-size: cover;
+  width: 300px;
+  height: 200px;
+  margin: auto;
+  z-index: 2;
+}
+
+.description {
+  width: 50%;
+  text-align: center;
+  margin: auto;
+  text-transform: uppercase;
+  color: #fff;
+  margin-top: 6em;
+  font-size: 17px;
+  z-index: 3;
+
+}
+
+.x-wing {
+  position: absolute;
+  left: -45%;
+  background: url(../images/x-wing.png);
+  background-size: cover;
+  width: 250px;
+  height: 106px;
+  z-index: 1;
+  animation-name: xwing;
+  animation-duration: 3s;
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+}
+.x-wing:hover {
+  animation-play-state:paused;
+}
+
+@keyframes xwing {
+  from {left:-45%}
+  to {left:100%;}
+}
+
+.explore {
+  display: block;
+  width: 170px;
+  height: 60px;
+  background-color: inherit;
+  border: 3px solid white;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 19px;
+  margin: auto;
+  text-align: center;
+  margin-top: 6em;
+
+}
+
+
+
+
+
+
+
+/*.galaxy {
   width: 100%;
   height: 100%;
   -webkit-transform-style: preserve-3d;
@@ -46,7 +117,7 @@ input {
   height: 30px;
   border: 0;
   border-radius: 50%;
-/* background-color: rgba(255,255,255,1); */
+/* background-color: rgba(255,255,255,1); 
   background-image: url("http://mepag.jpl.nasa.gov/hightlight_images/mars2_115916c.jpg");
   background-size: auto 100%;
   background-position: center;
@@ -141,4 +212,4 @@ input:checked ~ .cloud {
     -webkit-transform: rotateY(-360deg) rotateX(360deg);
             transform: rotateY(-360deg) rotateX(360deg);
   }
-}
+}*/
