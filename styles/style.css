@@ -43,6 +43,7 @@ body {
   margin-top: 6em;
   font-size: 14px;
   z-index: 3;
+  font-weight:400;
 
 }
 
@@ -103,19 +104,53 @@ body {
 #planet {
   color: #fff;
 }
+
+.logomap {
+  position: absolute;
+  right: 10px;
+  opacity: 0.4;
+  bottom: 10px;
+  background-image: url(../images/logo.png);
+  background-size: cover;
+  width: 100px;
+  height: 80px;
+  
+}
+.click {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin: auto;
+  text-align: center;
+  margin-top: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+.click-image {
+  display: inline-block;
+  background: url(../images/click.svg);
+  background-size: cover;
+  margin-right: 5px;
+  width: 25px;
+  height: 25px;
+ }
 .spinner {
   width: 25px;
   height: 25px;
 
   position: relative;
   margin: 100px auto;
+  margin-top: 50%;
 }
 
 .double-bounce1, .double-bounce2 {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background-color: #333;
+  background-color: #FFF;
   opacity: 0.6;
   position: absolute;
   top: 0;
@@ -146,37 +181,56 @@ body {
 }
 
 .planet_1 {
-  background: url(../images/planet.png);
+  background: url(../images/tatooine.png);
   position: absolute;
   top: 250px;
   left: 400px;
   background-size: cover;
-  width: 100px;
-  height: 100px;
+  width: 71px;
+  height: 70px;
   cursor: pointer;
 }
 
+.planet_1:hover {
+  background: url(../images/tatooinep.png);
+  background-size: cover;
+  width: 71px;
+  height: 70px;
+}
 .planet_2 {
-  background: url(../images/planet.png);
+  background: url(../images/naboo.png);
   position: absolute;
   top: 250px;
   left: 600px;
   background-size: cover;
-  width: 100px;
-  height: 100px;
+  width: 76px;
+  height: 75px;
   cursor: pointer;
 }
 
-.planet_3 {
-  background: url(../images/planet.png);
-  position: absolute;
-  top: 250px;
-  left: 800px;
+.planet_2:hover {
+  background: url(../images/nabooh.png);
   background-size: cover;
-  width: 100px;
-  height: 100px;
-  cursor: pointer;
+  width: 76px;
+  height: 75px;
+}
 
+.planet_3 {
+  background: url(../images/hoth.png);
+  position: absolute;
+  top: 600px;
+  left: 817px;
+  background-size: cover;
+  width: 76px;
+  height: 75px;
+  cursor: pointer;
+}
+
+.planet_3:hover {
+  background: url(../images/hothh.png);
+  background-size: cover;
+  width: 77px;
+  height: 77px;
 }
 
 
@@ -232,46 +286,95 @@ box-shadow: 5px 0px 28px 0px rgba(0,0,0,0.42);
   height: 2px;
 }
 
+.carac {
+  display: block;
+  width: 100%;
+  margin-top: 25px;
+
+}
+
 .climate {
+  display: inline-block;
   color: white;
   font-size: 14px;
   font-weight: 400;
   margin-left: 15px;
-  margin-top: 30px;
+  margin-top: 40px;
+  margin-bottom: 30px;
   text-transform: uppercase;
   width: 175px;
+  text-align: center;
 }
 .climate-image {
   background: url(../images/sunny74.svg);
   background-size: cover;
   width: 40px;
   height: 37px;
-  margin-bottom: 5px;
+  margin: auto;
+  margin-bottom: 8px;
 
 }
 
 .gravity {
+  display: inline-block;
   color: white;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   margin-left: 15px;
-  margin-top: 15px;
+  margin-top: 40px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.gravity-image {
+  background: url(../images/gravity.svg);
+  background-size: cover;
+  width: 40px;
+  height: 37px;
+  margin: auto;
+  margin-bottom: 8px;
+
 }
 
 .diameter {
+  display: inline-block;
   color: white;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   margin-left: 15px;
-  margin-top: 15px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  width: 175px;
+  text-align: center;
+}
+.diameter-image {
+  background: url(../images/diametre.svg);
+  background-size: cover;
+  width: 34px;
+  height: 34px;
+  margin: auto;
+  margin-bottom: 8px;
 }
 
 .terrain {
+  display: inline-block;
+  width: 100px;
   color: white;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   margin-left: 15px;
   margin-top: 15px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.terrain-image {
+  background: url(../images/terrain.svg);
+  background-size: cover;
+  width: 44px;
+  height: 34px;
+  margin: auto;
+  margin-bottom: 8px;
 }
 
 .population {
@@ -280,42 +383,60 @@ box-shadow: 5px 0px 28px 0px rgba(0,0,0,0.42);
   font-weight: 400;
   margin-left: 15px;
   margin-top: 15px;
+  margin: auto;
+  text-align: center;
 
 }
-.close {
-  display: block;
-  width: 80px;
-  height: 20px;
-  padding: 4px, 4px, 4px, 4px;
-  background-color: inherit;
-  border: 2px solid #edc064;
-  color: #edc064;
-  text-transform: uppercase;
-  font-weight: 400;
-  font-size: 13px;
+
+.population-image {
+  background: url(../images/people.svg);
+  background-size: cover;
+  width: 44px;
+  height: 34px;
   margin: auto;
+  margin-bottom: 8px;
+}
+.close {
+  background: url(../images/cross.svg);
+  background-size: cover;
+  position: absolute;
+  width: 15px;
+  height: 15px;
   text-align: center;
   margin-top: 6em;
   cursor: pointer;
+  top: -78px;
+  left: 313px;
+
+}
+.close:hover {
+  background: url(../images/crossh.svg);
+  background-size: cover;
 
 }
 
 .learnmore {
   display: block;
-  width: 100px;
-  height: 20px;
+  width: 115px;
+  height: 30px;
+  padding-top: 10px;
   padding: 4px, 4px, 4px, 4px;
   background-color: inherit;
   border: 2px solid #edc064;
   color: #edc064;
-  margin-top: 10px;
+  margin: auto;
+  margin-top: 42px;
   text-transform: uppercase;
   font-weight: 400;
   font-size: 13px;
-  margin: auto;
   text-align: center;
   cursor: pointer;
 
+}
+
+.learnmore:hover{
+  background-color: #edc064;
+  color: #191d3f;
 }
 
 /*.galaxy {

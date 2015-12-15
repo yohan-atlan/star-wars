@@ -13,34 +13,39 @@
     </head>
     <div id="planet">
 	    <body class="mapbackground">
-	    <div class="planet_1" v-on:click="displayPlanetInfos('http://swapi.co/api/planets/9/')"></div>
+	    <div class="click"> <div class="click-image"></div>Cliquez bande de salopes</div>
+	    <div class="planet_1" v-on:click="displayPlanetInfos('http://swapi.co/api/planets/1/')"></div>
 
-		<div class="planet_2" v-on:click="displayPlanetInfos('http://swapi.co/api/planets/2/')"></div>
+		<div class="planet_2" v-on:click="displayPlanetInfos('http://swapi.co/api/planets/8/')"></div>
 
-		<div class="planet_3" v-on:click="displayPlanetInfos('http://swapi.co/api/planets/3/')"></div>
+		<div class="planet_3" v-on:click="displayPlanetInfos('http://swapi.co/api/planets/4/')"></div>
  	
  	
  		<div class="card card1" v-show="cardToggle" transition="expand">
  			<div v-if="!loading">
 
-
+				<div class="close" v-on:click="close"></div>
 				<div class="name">{{ name }}</div>
 				<div class="separator"></div>
 
-				<div class="climate"> <div class="climate-image"></div>{{ climate }}</div>
-				<div class="gravity"> Gravité : {{ gravity }}</div>
-				<div class="diameter"> Diamètre : {{ diameter }}</div>
-				<div class="terrain"> Terrain : {{ terrain }}</div>
-				<div class="population"> Population : {{ population }}</div>
-				<div class="image "></div>
-				<div class="close" v-on:click="close">Close</div>
-				<div class="learnmore" v-on:click="learnmore">Learn more</div>
+				<div class="carac">
+					<div class="climate"> <div class="climate-image"></div>{{ climate }}</div>
+					<div class="gravity"> <div class="gravity-image"></div>{{ gravity }}</div>
+					<div class="diameter"><div class="diameter-image"></div>{{ diameter }}</div>
+					<div class="terrain"><div class="terrain-image"></div>{{ terrain }}</div>
+					<div class="population"><div class="population-image"></div> {{ population }}</div>
+					<div class="image "></div>
+					<div class="learnmore" v-on:click="learnmore">Learn more</div>
+				</div>
 			</div>
 			<div class="spinner" v-if="loading">
 				<div class="double-bounce1"></div>
 				<div class="double-bounce2"></div>
 			</div>
+		
 		</div>
+
+		<div class="logomap"></div>
 
 	</div>
 		
