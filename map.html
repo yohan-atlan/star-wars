@@ -13,7 +13,7 @@
     </head>
     <div id="planet">
 	    <body class="mapbackground">
-	    <div class="planet_1" v-on:click="displayPlanetInfos('http://swapi.co/api/planets/1/')"></div>
+	    <div class="planet_1" v-on:click="displayPlanetInfos('http://swapi.co/api/planets/9/')"></div>
 
 		<div class="planet_2" v-on:click="displayPlanetInfos('http://swapi.co/api/planets/2/')"></div>
 
@@ -27,13 +27,14 @@
 				<div class="name">{{ name }}</div>
 				<div class="separator"></div>
 
-				<div class="climate"> Climat : {{ climate }}</div>
+				<div class="climate"> <div class="climate-image"></div>{{ climate }}</div>
 				<div class="gravity"> Gravité : {{ gravity }}</div>
 				<div class="diameter"> Diamètre : {{ diameter }}</div>
 				<div class="terrain"> Terrain : {{ terrain }}</div>
 				<div class="population"> Population : {{ population }}</div>
 				<div class="image "></div>
 				<div class="close" v-on:click="close">Close</div>
+				<div class="learnmore" v-on:click="learnmore">Learn more</div>
 			</div>
 			<div class="spinner" v-if="loading">
 				<div class="double-bounce1"></div>
