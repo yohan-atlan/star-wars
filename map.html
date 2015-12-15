@@ -11,12 +11,35 @@
 	    <link rel="stylesheet" href="styles/style.css">
 	    
     </head>
-    <body>
+    <div id="planet">
+	    <body class="mapbackground">
+	    <div class="planet_1" v-on:click="displayPlanetInfos('http://swapi.co/api/planets/1/')"></div>
 
-    <div id="app">
-    	
-    </div>
-    	
+		<div class="planet_2" v-on:click="displayPlanetInfos('http://swapi.co/api/planets/2/')"></div>
+
+		<div class="planet_3" v-on:click="displayPlanetInfos('http://swapi.co/api/planets/3/')"></div>
+ 	
+ 	
+ 		<div class="card card1" v-show="cardToggle" transition="expand">
+ 			<div v-if="!loading">
+
+
+				<div class="name">{{ name }}</div>
+				<div class="climate">{{ climate }}</div>
+				<div class="gravity">{{ gravity }}</div>
+				<div class="diameter">{{ diameter }}</div>
+				<h2>Films :</h2>
+				<div class="film">{{filmName}}</div>
+				<div class="image "></div>
+				<div class="close" v-on:click="close">Close</div>
+			</div>
+			<div class="spinner" v-if="loading">
+				<div class="double-bounce1"></div>
+				<div class="double-bounce2"></div>
+			</div>
+		</div>
+
+	</div>
 		
 
 

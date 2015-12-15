@@ -1,5 +1,3 @@
-console.log('yo');
-
 // function Create_Star(){
     
 //     var cluster = document.querySelector('.cluster');
@@ -28,29 +26,88 @@ console.log('yo');
 
 // Create_Star();
 
+var AJAX = {
+    get: function(url) {
+        return new Promise(function(resolve, reject) {
+        // Do the usual XHR stuff
+        var req = new XMLHttpRequest();
+        req.open('GET', url);
 
-var vue = new Vue({
-  el: '#app',
+        req.onload = function() {
+          // This is called even on 404 etc
+          // so check the status
+          if (req.status == 200) {
+            // Resolve the promise with the response text
+            resolve(req.response);
+          }
+          else {
+            // Otherwise reject with the status text
+            // which will hopefully be a meaningful error
+            reject(Error(req.statusText));
+          }
+        };
+
+        // Handle network errors
+        req.onerror = function() {
+          reject(Error("Network Error"));
+        };
+
+        // Make the request
+        req.send();
+      });
+    }
+}
+
+var planet = new Vue({
+  el: '#planet',
   data: {
-    model: ''
+    cardToggle: false,
+    name: '',
+    climate: '',
+    gravity: '',
+    diameter: '',
+    filmName: '',
+    loading: true
+  },
+  methods: {
+    displayPlanetInfos: function (url) {
+        this.loading = true;
+        var self = this;
+        this.cardToggle = true;
+        AJAX.get(url).then(function(response) {
+          data = JSON.parse(response);
+          self.name = data.name
+          self.climate = data.climate
+          self.gravity = data.gravity
+          self.diameter = data.diameter + ' m'
+          AJAX.get(data.films[0]).then(function(response) {
+            data = JSON.parse(response);
+            self.loading = false;
+            self.filmName = data.title;
+
+          }, function(error) {
+            console.error("Failed!", error);
+          });
+        }, function(error) {
+          console.error("Failed!", error);
+        });
+    },
+    close: function () {
+        this.cardToggle = false;
+        this.loading = true;
+    }
   }
+
 })
 
 
-var request = new XMLHttpRequest();
-request.open('GET', 'http://swapi.co/api/starships/9', true);
+// AJAX.get('http://swapi.co/api/planets/1/').then(function(response) {
+//   data = JSON.parse(response);
+//   vue.name = data.name
+//   vue.climate = data.climate
+//   vue.gravity = data.gravity
+// }, function(error) {
+//   console.error("Failed!", error);
+// });
 
-request.onload = function() {
-  if (request.status >= 200 && request.status < 400) {
-    // Success!
-    var data = JSON.parse(request.responseText);
-  } else {
-    console.log("Error")
-  }
-};
 
-request.onerror = function() {
-  // There was a connection error of some sort
-};
-
-request.send();
