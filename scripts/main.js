@@ -67,11 +67,13 @@ var planet = new Vue({
     gravity: '',
     diameter: '',
     filmName: '',
+    terrain: '',
+    population: '',
     loading: true
   },
   methods: {
     displayPlanetInfos: function (url) {
-        this.loading = true;
+        this.loading = true
         var self = this;
         this.cardToggle = true;
         AJAX.get(url).then(function(response) {
@@ -79,7 +81,9 @@ var planet = new Vue({
           self.name = data.name
           self.climate = data.climate
           self.gravity = data.gravity
-          self.diameter = data.diameter + ' m'
+          self.diameter = data.diameter + ' km'
+          self.terrain = data.terrain
+          self.population = data.population
           AJAX.get(data.films[0]).then(function(response) {
             data = JSON.parse(response);
             self.loading = false;

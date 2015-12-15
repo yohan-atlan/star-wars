@@ -25,11 +25,13 @@
 
 
 				<div class="name">{{ name }}</div>
-				<div class="climate">{{ climate }}</div>
-				<div class="gravity">{{ gravity }}</div>
-				<div class="diameter">{{ diameter }}</div>
-				<h2>Films :</h2>
-				<div class="film">{{filmName}}</div>
+				<div class="separator"></div>
+
+				<div class="climate"> Climat : {{ climate }}</div>
+				<div class="gravity"> Gravité : {{ gravity }}</div>
+				<div class="diameter"> Diamètre : {{ diameter }}</div>
+				<div class="terrain"> Terrain : {{ terrain }}</div>
+				<div class="population"> Population : {{ population }}</div>
 				<div class="image "></div>
 				<div class="close" v-on:click="close">Close</div>
 			</div>

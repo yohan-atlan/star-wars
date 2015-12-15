@@ -15,6 +15,11 @@ body {
   background: url(../images/map_background.png) center;
   background-size: 100% auto;
   width: 100%;
+}
+.first-container a{
+  text-decoration: none;
+  color: inherit;
+
 
 
 }
@@ -48,15 +53,16 @@ body {
   height: 106px;
   z-index: 1;
   animation-name: xwing;
-  animation-duration: 3s;
+  animation-duration: 14s;
   animation-delay: 1s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 
 }
 @keyframes xwing {
-  from {left:-45%}
-  to {left:100%;}
+  0% {left:-45%}
+  10% {left:100%}
+  100% {left: 100%}
 }
 
 .explore {
@@ -72,6 +78,14 @@ body {
   margin: auto;
   text-align: center;
   margin-top: 6em;
+  cursor: pointer;
+
+}
+
+.explore:hover {
+  background-color: white;
+  color: #9A787B;
+  
 
 }
 
@@ -137,6 +151,7 @@ body {
   background-size: cover;
   width: 100px;
   height: 100px;
+  cursor: pointer;
 }
 
 .planet_2 {
@@ -147,6 +162,7 @@ body {
   background-size: cover;
   width: 100px;
   height: 100px;
+  cursor: pointer;
 }
 
 .planet_3 {
@@ -157,28 +173,117 @@ body {
   background-size: cover;
   width: 100px;
   height: 100px;
+  cursor: pointer;
 
 }
+
+
+/**********
+
+    CARD
+
+*************/
+
 .card {
   position: absolute;
   left: 0;top: 0;bottom: 0;
-  width: 200px;
-  background-color: black;
+  width: 400px;
+  height: 400px;
+  background-color: #191d3f;
 }
+
+
 
 .expand-transition {
   position: absolute;
   left: 0;top: 0;bottom: 0;
-  width: 200px;
+  width: 400px;
+  height: 100%;
   opacity: 1;
-  background-color: black;
+  background: linear-gradient(to right, rgba(255,0,0,0), rgba(25, 29, 63, 1));
   transition: all .5s ease;
 }
 .expand-enter, .expand-leave {
-  left: -200px;
+  left: -400px;
   opacity: 0;
 }
 
+.name {
+  color: #edc064;
+  font-size: 25px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.separator {
+  background: linear-gradient(to right, rgba(255,0,0,0), rgba(237, 192, 100, 1));
+  background-size: cover;
+  margin: auto;
+  margin-top: 8px; 
+  width: 151px;
+  height: 2px;
+}
+
+.climate {
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  margin-left: 15px;
+  margin-top: 30px;
+}
+
+.gravity {
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  margin-left: 15px;
+  margin-top: 15px;
+}
+
+.diameter {
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  margin-left: 15px;
+  margin-top: 15px;
+}
+
+.terrain {
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  margin-left: 15px;
+  margin-top: 15px;
+}
+
+.population {
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  margin-left: 15px;
+  margin-top: 15px;
+
+}
+.close {
+  display: block;
+  width: 80px;
+  height: 20px;
+  padding: 4px, 4px, 4px, 4px;
+  background-color: inherit;
+  border: 2px solid #edc064;
+  color: #edc064;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 13px;
+  margin: auto;
+  text-align: center;
+  margin-top: 6em;
+  cursor: pointer;
+
+}
 
 /*.galaxy {
   width: 100%;
