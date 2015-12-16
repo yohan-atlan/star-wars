@@ -300,7 +300,7 @@ body {
   background: url(../images/alderaan.png);
   position: relative;
   top: 200px;
-  left: 800px;
+  left: 1250px;
   background-size: cover;
   width: 85px;
   height: 85px;
@@ -309,6 +309,42 @@ body {
 
 .planet_7:hover {
   background: url(../images/alderaanh.png);
+  background-size: cover;
+  width: 85px;
+  height: 85px;
+}
+
+.planet_8 {
+  background: url(../images/coruscant.png);
+  position: relative;
+  top: -200px;
+  left: 1250px;
+  background-size: cover;
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+}
+
+.planet_8:hover {
+  background: url(../images/coruscanth.png);
+  background-size: cover;
+  width: 70px;
+  height: 70px;
+}
+
+.planet_9 {
+  background: url(../images/coruscant.png);
+  position: relative;
+  top: -200px;
+  left: 1250px;
+  background-size: cover;
+  width: 85px;
+  height: 85px;
+  cursor: pointer;
+}
+
+.planet_9:hover {
+  background: url(../images/coruscanth.png);
   background-size: cover;
   width: 85px;
   height: 85px;

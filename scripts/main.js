@@ -109,6 +109,57 @@ var planet = new Vue({
 
 })
 
+var starship = new Vue({
+  el: '#starship',
+  data: {
+    cardToggle: false,
+    name: '',
+    infos: '',
+    climate: '',
+    gravity: '',
+    diameter: '',
+    filmName: '',
+    terrain: '',
+    population: '',
+    loading: true
+  },
+  methods: {
+    displayStarshipInfos: function (url) {
+      this.infos = ''
+      this.loading = true
+      var self = this;
+      this.cardToggle = true;
+      AJAX.get(url).then(function(response) {
+        data = JSON.parse(response);
+        self.name = data.name
+        self.climate = data.climate
+        self.gravity = data.gravity
+        self.diameter = data.diameter + ' km'
+        self.terrain = data.terrain
+        self.population = data.population
+        AJAX.get(data.films[0]).then(function(response) {
+          data = JSON.parse(response);
+          self.loading = false;
+          self.filmName = data.title;
+
+        }, function(error) {
+          console.error("Failed!", error);
+        });
+      }, function(error) {
+        console.error("Failed!", error);
+      });
+    },
+    close: function () {
+      this.cardToggle = false;
+      this.loading = true;
+    },
+    setTitle: function(txt) {
+      this.infos = txt;
+    }
+  }
+
+})
+
 
 // AJAX.get('http://swapi.co/api/planets/1/').then(function(response) {
 //   data = JSON.parse(response);
