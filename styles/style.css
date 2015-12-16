@@ -150,7 +150,7 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background-color: #FFF;
+  background-color: #edc064;
   opacity: 0.6;
   position: absolute;
   top: 0;
@@ -180,9 +180,18 @@ body {
   }
 }
 
+.infos {
+  font-weight: 400;
+  color: #B9B9B9;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 3px;
+}
 .planet_1 {
   background: url(../images/tatooine.png);
-  position: absolute;
+  position: relative;
   top: 250px;
   left: 400px;
   background-size: cover;
@@ -199,7 +208,7 @@ body {
 }
 .planet_2 {
   background: url(../images/naboo.png);
-  position: absolute;
+  position: relative;
   top: 250px;
   left: 600px;
   background-size: cover;
@@ -217,8 +226,8 @@ body {
 
 .planet_3 {
   background: url(../images/hoth.png);
-  position: absolute;
-  top: 600px;
+  position: relative;
+  top: 400px;
   left: 817px;
   background-size: cover;
   width: 76px;
@@ -229,10 +238,81 @@ body {
 .planet_3:hover {
   background: url(../images/hothh.png);
   background-size: cover;
-  width: 77px;
-  height: 77px;
+  width: 76px;
+  height: 75px;
 }
 
+.planet_4 {
+  background: url(../images/mustafar.png);
+  position: relative;
+  top: 200px;
+  left: 900px;
+  background-size: cover;
+  width: 41px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.planet_4:hover {
+  background: url(../images/mustafarh.png);
+  background-size: cover;
+  width: 41px;
+  height: 40px;
+}
+
+.planet_5 {
+  background: url(../images/dagobah.png);
+  position: relative;
+  top: -150px;
+  left: 1200px;
+  background-size: cover;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+}
+
+.planet_5:hover {
+  background: url(../images/dagobahh.png);
+  background-size: cover;
+  width: 55px;
+  height: 55px;
+}
+
+.planet_6 {
+  background: url(../images/kaminop.png);
+  position: relative;
+  top: 350px;
+  left: 300px;
+  background-size: cover;
+  width: 85px;
+  height: 85px;
+  cursor: pointer;
+}
+
+.planet_6:hover {
+  background: url(../images/kaminoph.png);
+  background-size: cover;
+  width: 85px;
+  height: 85px;
+}
+
+.planet_7 {
+  background: url(../images/alderaan.png);
+  position: relative;
+  top: 200px;
+  left: 800px;
+  background-size: cover;
+  width: 85px;
+  height: 85px;
+  cursor: pointer;
+}
+
+.planet_7:hover {
+  background: url(../images/alderaanh.png);
+  background-size: cover;
+  width: 85px;
+  height: 85px;
+}
 
 /**********
 
@@ -244,27 +324,30 @@ body {
   position: absolute;
   left: 0;top: 0;bottom: 0;
   width: 400px;
-  height: 400px;
   background-color: #191d3f;
 }
 
-
+.carac > div {
+  vertical-align: top;
+}
 
 .expand-transition {
-  position: absolute;
-  left: 0;top: 0;bottom: 0;
   width: 350px;
-  height: 100%;
   opacity: 1;
   background: linear-gradient(to right, rgba(255,0,0,0), rgba(25, 29, 63, 1));
   transition: all .5s ease;
   -webkit-box-shadow: 5px 0px 28px 0px rgba(0,0,0,0.42);
--moz-box-shadow: 5px 0px 28px 0px rgba(0,0,0,0.42);
-box-shadow: 5px 0px 28px 0px rgba(0,0,0,0.42);
+  -moz-box-shadow: 5px 0px 28px 0px rgba(0,0,0,0.42);
+  box-shadow: 5px 0px 28px 0px rgba(0,0,0,0.42);
 }
 .expand-enter, .expand-leave {
   left: -400px;
   opacity: 0;
+}
+
+#layout {
+  position: absolute;
+  top: 0;right: 0;left: 0;bottom: 0;
 }
 
 .name {
@@ -312,6 +395,7 @@ box-shadow: 5px 0px 28px 0px rgba(0,0,0,0.42);
   height: 37px;
   margin: auto;
   margin-bottom: 8px;
+  cursor: pointer;
 
 }
 
@@ -333,6 +417,7 @@ box-shadow: 5px 0px 28px 0px rgba(0,0,0,0.42);
   height: 37px;
   margin: auto;
   margin-bottom: 8px;
+  cursor: pointer;
 
 }
 
@@ -355,6 +440,7 @@ box-shadow: 5px 0px 28px 0px rgba(0,0,0,0.42);
   height: 34px;
   margin: auto;
   margin-bottom: 8px;
+  cursor: pointer;
 }
 
 .terrain {
@@ -364,9 +450,10 @@ box-shadow: 5px 0px 28px 0px rgba(0,0,0,0.42);
   font-size: 14px;
   font-weight: 400;
   margin-left: 15px;
-  margin-top: 15px;
+  margin-top: 30px;
   text-transform: uppercase;
   text-align: center;
+
 }
 .terrain-image {
   background: url(../images/terrain.svg);
@@ -375,6 +462,7 @@ box-shadow: 5px 0px 28px 0px rgba(0,0,0,0.42);
   height: 34px;
   margin: auto;
   margin-bottom: 8px;
+  cursor: pointer;
 }
 
 .population {
@@ -395,6 +483,7 @@ box-shadow: 5px 0px 28px 0px rgba(0,0,0,0.42);
   height: 34px;
   margin: auto;
   margin-bottom: 8px;
+  cursor: pointer;
 }
 .close {
   background: url(../images/cross.svg);

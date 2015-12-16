@@ -63,6 +63,7 @@ var planet = new Vue({
   data: {
     cardToggle: false,
     name: '',
+    infos: '',
     climate: '',
     gravity: '',
     diameter: '',
@@ -73,32 +74,36 @@ var planet = new Vue({
   },
   methods: {
     displayPlanetInfos: function (url) {
-        this.loading = true
-        var self = this;
-        this.cardToggle = true;
-        AJAX.get(url).then(function(response) {
+      this.infos = ''
+      this.loading = true
+      var self = this;
+      this.cardToggle = true;
+      AJAX.get(url).then(function(response) {
+        data = JSON.parse(response);
+        self.name = data.name
+        self.climate = data.climate
+        self.gravity = data.gravity
+        self.diameter = data.diameter + ' km'
+        self.terrain = data.terrain
+        self.population = data.population
+        AJAX.get(data.films[0]).then(function(response) {
           data = JSON.parse(response);
-          self.name = data.name
-          self.climate = data.climate
-          self.gravity = data.gravity
-          self.diameter = data.diameter + ' km'
-          self.terrain = data.terrain
-          self.population = data.population
-          AJAX.get(data.films[0]).then(function(response) {
-            data = JSON.parse(response);
-            self.loading = false;
-            self.filmName = data.title;
+          self.loading = false;
+          self.filmName = data.title;
 
-          }, function(error) {
-            console.error("Failed!", error);
-          });
         }, function(error) {
           console.error("Failed!", error);
         });
+      }, function(error) {
+        console.error("Failed!", error);
+      });
     },
     close: function () {
-        this.cardToggle = false;
-        this.loading = true;
+      this.cardToggle = false;
+      this.loading = true;
+    },
+    setTitle: function(txt) {
+      this.infos = txt;
     }
   }
 
