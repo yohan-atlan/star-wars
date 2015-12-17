@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	    <title>Semaine Intensive - Star Wars</title>
+	    <!--|if lt IE 9]>
+            <script src="http://html5shiv.google.com/svn/trunk/html5.js"
+        ><![endif]-->
+	    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	    <link rel="stylesheet" href="styles/style.css">
+	    
+    </head>
+	<body class="mapbackground">
+	    <div class="click">
+		    <div class="click-image"></div>
+		    <div>Cliquez bande de salopes</div>
+	    </div>
+	    <div class="logomap"></div>
+	    <div id="layout">
+		    <div id="planet" class="galaxy">
+			    <div class="planet_1" v-on:click="displayPlanetInfos('http://swapi.co/api/planets/1/')"></div>
+
+				<div class="planet_2" v-on:click="displayPlanetInfos('http://swapi.co/api/planets/8/')"></div>
+
+				<div class="planet_3" v-on:click="displayPlanetInfos('http://swapi.co/api/planets/4/')"></div>
+
+				<div class="planet_4" v-on:click="displayPlanetInfos('http://swapi.co/api/planets/13/')"></div>
+
+				<div class="planet_5" v-on:click="displayPlanetInfos('http://swapi.co/api/planets/5/')"></div>
+
+				<div class="planet_6" v-on:click="displayPlanetInfos('http://swapi.co/api/planets/10/')"></div>
+
+				<div class="planet_7" v-on:click="displayPlanetInfos('http://swapi.co/api/planets/2/')"></div>
+
+				<div class="planet_8" v-on:click="displayPlanetInfos('http://swapi.co/api/planets/9/')"></div>
+
+				<div class="planet_9" v-on:click="displayPlanetInfos('http://swapi.co/api/planets/10/')"></div>
+
+				<div class="planet_10" v-on:click="displayPlanetInfos('http://swapi.co/api/planets/10/')"></div>
+		 	
+		 	
+		 	
+		 		<div class="card card1" v-show="cardToggle" transition="expand">
+		 			<div v-if="!loading">
+
+						<div class="close" v-on:click="close"></div>
+						<div class="name">{{ name }}</div>
+						<div class="separator"></div>
+						<div class="infos">{{ infos }}</div>
+
+						<div class="carac">
+							<div class="climate" v-on:mouseover="setTitle('Climat')"><div class="climate-image"></div>{{ climate }}</div>
+							<div class="gravity" v-on:mouseover="setTitle('Gravity')"> <div class="gravity-image"></div>{{ gravity }}</div>
+							<div class="diameter" v-on:mouseover="setTitle('Diamètre')"><div class="diameter-image"></div>{{ diameter }}</div>
+							<div class="terrain" v-on:mouseover="setTitle('Terrain')"><div class="terrain-image"></div>{{ terrain }}</div>
+							<div class="population" v-on:mouseover="setTitle('Population')"><div class="population-image"></div> {{ population }}</div>
+							<div class="image "></div>
+							<div class="learnmore" v-on:click="learnmore">Learn more</div>
+						</div>
+					</div>
+					<div class="spinner" v-if="loading">
+						<div class="double-bounce1"></div>
+						<div class="double-bounce2"></div>
+					</div>				
+				</div>
+			</div>
+		</div>
+		
+		<div id="starship" class="galaxy">
+			    <div class="starship_1" v-on:click="displayStarshipInfos('http://swapi.co/api/planets/1/')"></div>
+
+				<div class="starship_2" v-on:click="displayPlanetInfos('http://swapi.co/api/planets/8/')"></div>
+
+				<div class="starship_3" v-on:click="displayPlanetInfos('http://swapi.co/api/planets/4/')"></div>
+
+				<div class="starship_4" v-on:click="displayPlanetInfos('http://swapi.co/api/planets/13/')"></div>
+
+				<div class="starship_5" v-on:click="displayPlanetInfos('http://swapi.co/api/planets/5/')"></div>
+
+				<div class="starship_6" v-on:click="displayPlanetInfos('http://swapi.co/api/planets/10/')"></div>
+
+				<div class="starship_7" v-on:click="displayPlanetInfos('http://swapi.co/api/planets/2/')"></div>
+
+				<div class="starship_8" v-on:click="displayPlanetInfos('http://swapi.co/api/planets/9/')"></div>
+
+				<div class="starship_9" v-on:click="displayPlanetInfos('http://swapi.co/api/planets/10/')"></div>
+
+				<div class="starship_10" v-on:click="displayPlanetInfos('http://swapi.co/api/planets/10/')"></div>
+		 	
+		 	
+		 	
+		 		<div class="card2 card1" v-show="cardToggle" transition="expand2">
+		 			<div v-if="!loading">
+
+						<div class="close2" v-on:click="close"></div>
+						<div class="name">{{ name }}</div>
+						<div class="separator"></div>
+						<div class="infos">{{ infos }}</div>
+
+						<div class="carac">
+							<div class="climate" v-on:mouseover="setTitle('Climat')"><div class="climate-image"></div>{{ climate }}</div>
+							<div class="gravity" v-on:mouseover="setTitle('Gravity')"> <div class="gravity-image"></div>{{ gravity }}</div>
+							<div class="diameter" v-on:mouseover="setTitle('Diamètre')"><div class="diameter-image"></div>{{ diameter }}</div>
+							<div class="terrain" v-on:mouseover="setTitle('Terrain')"><div class="terrain-image"></div>{{ terrain }}</div>
+							<div class="population" v-on:mouseover="setTitle('Population')"><div class="population-image"></div> {{ population }}</div>
+							<div class="image "></div>
+							<div class="learnmore" v-on:click="learnmore">Learn more</div>
+						</div>
+					</div>
+					<div class="spinner" v-if="loading">
+						<div class="double-bounce1"></div>
+						<div class="double-bounce2"></div>
+					</div>				
+				</div>
+			</div>
+		</div>
+		
+		<script src="scripts/vue.js"></script>
+	    <script src="scripts/main.js"></script>
+
+    </body>
+    </html>

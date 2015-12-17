@@ -1,0 +1,701 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
+body {
+  background: url(../images/background2.png);
+  background-size: cover;
+  width: auto;
+  height: 100%;
+
+}
+
+.mapbackground {
+  background: url(../images/map_background.png) center;
+  background-size: 100% auto;
+  width: 100%;
+}
+.first-container a{
+  text-decoration: none;
+  color: inherit;
+
+
+
+}
+.logo {
+  background-image: url(../images/logo.png);
+  background-size: cover;
+  width: 300px;
+  height: 200px;
+  margin: auto;
+  z-index: 2;
+}
+
+.description {
+  width: 50%;
+  text-align: center;
+  margin: auto;
+  text-transform: uppercase;
+  color: #fff;
+  margin-top: 6em;
+  font-size: 14px;
+  z-index: 3;
+  font-weight:400;
+
+}
+
+.x-wing {
+  position: absolute;
+  left: -45%;
+  background: url(../images/x-wing.png);
+  background-size: cover;
+  width: 250px;
+  height: 106px;
+  z-index: 1;
+  animation-name: xwing;
+  animation-duration: 14s;
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+}
+@keyframes xwing {
+  0% {left:-45%}
+  10% {left:100%}
+  100% {left: 100%}
+}
+
+.explore {
+  display: block;
+  width: 170px;
+  height: 60px;
+  background-color: inherit;
+  border: 3px solid white;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 19px;
+  margin: auto;
+  text-align: center;
+  margin-top: 3em;
+  cursor: pointer;
+
+}
+
+.explore:hover {
+  background-color: white;
+  color: #9A787B;
+  
+
+}
+
+
+/*****************
+
+
+    MAP
+
+
+*******************/
+
+#planet {
+  color: #fff;
+}
+
+.logomap {
+  position: absolute;
+  right: 10px;
+  opacity: 0.4;
+  bottom: 10px;
+  background-image: url(../images/logo.png);
+  background-size: cover;
+  width: 100px;
+  height: 80px;
+  
+}
+.click {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin: auto;
+  text-align: center;
+  margin-top: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+.click-image {
+  display: inline-block;
+  background: url(../images/click.svg);
+  background-size: cover;
+  margin-right: 5px;
+  width: 25px;
+  height: 25px;
+ }
+.spinner {
+  width: 25px;
+  height: 25px;
+
+  position: relative;
+  margin: 100px auto;
+  margin-top: 50%;
+}
+
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #edc064;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+  0%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+
+.infos {
+  font-weight: 400;
+  color: #B9B9B9;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+.planet_1 {
+  background: url(../images/tatooine.png);
+  position: relative;
+  top: 250px;
+  left: 400px;
+  background-size: cover;
+  width: 71px;
+  height: 70px;
+  cursor: pointer;
+}
+
+.planet_1:hover {
+  background: url(../images/tatooinep.png);
+  background-size: cover;
+  width: 71px;
+  height: 70px;
+}
+.planet_2 {
+  background: url(../images/naboo.png);
+  position: relative;
+  top: 250px;
+  left: 600px;
+  background-size: cover;
+  width: 76px;
+  height: 75px;
+  cursor: pointer;
+}
+
+.planet_2:hover {
+  background: url(../images/nabooh.png);
+  background-size: cover;
+  width: 76px;
+  height: 75px;
+}
+
+.planet_3 {
+  background: url(../images/hoth.png);
+  position: relative;
+  top: 400px;
+  left: 817px;
+  background-size: cover;
+  width: 76px;
+  height: 75px;
+  cursor: pointer;
+}
+
+.planet_3:hover {
+  background: url(../images/hothh.png);
+  background-size: cover;
+  width: 76px;
+  height: 75px;
+}
+
+.planet_4 {
+  background: url(../images/mustafar.png);
+  position: relative;
+  top: 200px;
+  left: 900px;
+  background-size: cover;
+  width: 41px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.planet_4:hover {
+  background: url(../images/mustafarh.png);
+  background-size: cover;
+  width: 41px;
+  height: 40px;
+}
+
+.planet_5 {
+  background: url(../images/dagobah.png);
+  position: relative;
+  top: -150px;
+  left: 1200px;
+  background-size: cover;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+}
+
+.planet_5:hover {
+  background: url(../images/dagobahh.png);
+  background-size: cover;
+  width: 55px;
+  height: 55px;
+}
+
+.planet_6 {
+  background: url(../images/kaminop.png);
+  position: relative;
+  top: 350px;
+  left: 300px;
+  background-size: cover;
+  width: 85px;
+  height: 85px;
+  cursor: pointer;
+}
+
+.planet_6:hover {
+  background: url(../images/kaminoph.png);
+  background-size: cover;
+  width: 85px;
+  height: 85px;
+}
+
+.planet_7 {
+  background: url(../images/alderaan.png);
+  position: relative;
+  top: 200px;
+  left: 1250px;
+  background-size: cover;
+  width: 85px;
+  height: 85px;
+  cursor: pointer;
+}
+
+.planet_7:hover {
+  background: url(../images/alderaanh.png);
+  background-size: cover;
+  width: 85px;
+  height: 85px;
+}
+
+.planet_8 {
+  background: url(../images/coruscant.png);
+  position: relative;
+  top: -200px;
+  left: 1250px;
+  background-size: cover;
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+}
+
+.planet_8:hover {
+  background: url(../images/coruscanth.png);
+  background-size: cover;
+  width: 70px;
+  height: 70px;
+}
+
+.planet_9 {
+  background: url(../images/coruscant.png);
+  position: relative;
+  top: -200px;
+  left: 1250px;
+  background-size: cover;
+  width: 85px;
+  height: 85px;
+  cursor: pointer;
+}
+
+.planet_9:hover {
+  background: url(../images/coruscanth.png);
+  background-size: cover;
+  width: 85px;
+  height: 85px;
+}
+
+/**********
+
+    CARD
+
+*************/
+
+.card {
+  position: absolute;
+  left: 0;top: 0;bottom: 0;
+  width: 400px;
+  background-color: #191d3f;
+}
+
+.carac > div {
+  vertical-align: top;
+}
+
+.expand-transition {
+  width: 350px;
+  opacity: 1;
+  background: linear-gradient(to right, rgba(255,0,0,0), rgba(25, 29, 63, 1));
+  transition: all .5s ease;
+  -webkit-box-shadow: 5px 0px 28px 0px rgba(0,0,0,0.42);
+  -moz-box-shadow: 5px 0px 28px 0px rgba(0,0,0,0.42);
+  box-shadow: 5px 0px 28px 0px rgba(0,0,0,0.42);
+}
+.expand-enter, .expand-leave {
+  left: -400px;
+  opacity: 0;
+}
+
+#layout {
+  position: absolute;
+  top: 0;right: 0;left: 0;bottom: 0;
+}
+
+.name {
+  color: #edc064;
+  font-size: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.separator {
+  background: linear-gradient(to right, rgba(255,0,0,0), rgba(237, 192, 100, 1));
+  background-size: cover;
+  margin: auto;
+  margin-top: 8px; 
+  width: 151px;
+  height: 2px;
+}
+
+.carac {
+  display: block;
+  width: 100%;
+  margin-top: 25px;
+
+}
+
+.climate {
+  display: inline-block;
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 15px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  width: 175px;
+  text-align: center;
+}
+.climate-image {
+  background: url(../images/sunny74.svg);
+  background-size: cover;
+  width: 40px;
+  height: 37px;
+  margin: auto;
+  margin-bottom: 8px;
+  cursor: pointer;
+
+}
+
+.gravity {
+  display: inline-block;
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 15px;
+  margin-top: 40px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.gravity-image {
+  background: url(../images/gravity.svg);
+  background-size: cover;
+  width: 40px;
+  height: 37px;
+  margin: auto;
+  margin-bottom: 8px;
+  cursor: pointer;
+
+}
+
+.diameter {
+  display: inline-block;
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 15px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  width: 175px;
+  text-align: center;
+}
+.diameter-image {
+  background: url(../images/diametre.svg);
+  background-size: cover;
+  width: 34px;
+  height: 34px;
+  margin: auto;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.terrain {
+  display: inline-block;
+  width: 100px;
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 15px;
+  margin-top: 30px;
+  text-transform: uppercase;
+  text-align: center;
+
+}
+.terrain-image {
+  background: url(../images/terrain.svg);
+  background-size: cover;
+  width: 44px;
+  height: 34px;
+  margin: auto;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.population {
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  margin-left: 15px;
+  margin-top: 15px;
+  margin: auto;
+  text-align: center;
+
+}
+
+.population-image {
+  background: url(../images/people.svg);
+  background-size: cover;
+  width: 44px;
+  height: 34px;
+  margin: auto;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+.close {
+  background: url(../images/cross.svg);
+  background-size: cover;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+  margin-top: 6em;
+  cursor: pointer;
+  top: -78px;
+  left: 313px;
+
+}
+.close:hover {
+  background: url(../images/crossh.svg);
+  background-size: cover;
+
+}
+
+.learnmore {
+  display: block;
+  width: 115px;
+  height: 30px;
+  padding-top: 10px;
+  padding: 4px, 4px, 4px, 4px;
+  background-color: inherit;
+  border: 2px solid #edc064;
+  color: #edc064;
+  margin: auto;
+  margin-top: 42px;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 13px;
+  text-align: center;
+  cursor: pointer;
+
+}
+
+.learnmore:hover{
+  background-color: #edc064;
+  color: #191d3f;
+}
+
+/*.galaxy {
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 5000px;
+          perspective: 5000px;
+}
+input {
+  display: none;
+}
+.planet__mars {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  background-color: #000;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transition: -webkit-transform 4s;
+  transition: -webkit-transform 4s;
+  transition: transform 4s;
+  transition: transform 4s, -webkit-transform 4s;
+  -webkit-animation: pulse 3s linear infinite alternate;
+          animation: pulse 3s linear infinite alternate;
+}
+.planet__mars::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 50%;
+/* background-color: rgba(255,255,255,1); 
+  background-image: url("http://mepag.jpl.nasa.gov/hightlight_images/mars2_115916c.jpg");
+  background-size: auto 100%;
+  background-position: center;
+}
+input:checked + .planet__mars {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+.cloud {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: scale(0.3) translate(-50%, -50%);
+          transform: scale(0.3) translate(-50%, -50%);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 4s;
+  transition: -webkit-transform 4s;
+  transition: transform 4s;
+  transition: transform 4s, -webkit-transform 4s;
+}
+input:checked ~ .cloud {
+  -webkit-transform: scale(0.5) translate(-50%, -50%);
+          transform: scale(0.5) translate(-50%, -50%);
+}
+.cluster {
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 5000px;
+          perspective: 5000px;
+  -webkit-animation: rotation 240s linear infinite;
+          animation: rotation 240s linear infinite;
+}
+.star {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+.star,
+.star::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,0.8);
+}
+.star::before {
+  content: "";
+  -webkit-transform: rotateY(-90deg);
+          transform: rotateY(-90deg);
+}
+
+@-webkit-keyframes pulse {
+  from {
+    box-shadow: 0 0 20px #ff6432;
+  }
+  to {
+    box-shadow: 0 0 50px #ff6432;
+  }
+}
+@keyframes pulse {
+  from {
+    box-shadow: 0 0 20px #ff6432;
+  }
+  to {
+    box-shadow: 0 0 50px #ff6432;
+  }
+}
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotateY(0) rotateX(0);
+            transform: rotateY(0) rotateX(0);
+  }
+  to {
+    -webkit-transform: rotateY(-360deg) rotateX(360deg);
+            transform: rotateY(-360deg) rotateX(360deg);
+  }
+}
+@keyframes rotation {
+  from {
+    -webkit-transform: rotateY(0) rotateX(0);
+            transform: rotateY(0) rotateX(0);
+  }
+  to {
+    -webkit-transform: rotateY(-360deg) rotateX(360deg);
+            transform: rotateY(-360deg) rotateX(360deg);
+  }
+}*/
